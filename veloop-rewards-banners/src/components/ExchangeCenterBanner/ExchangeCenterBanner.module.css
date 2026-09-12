@@ -1,0 +1,372 @@
+.bannerGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.title {
+  font-family: var(--font-family-display);
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 520px;
+  margin: 0;
+}
+
+/* Redemption Flow Row */
+.redemptionFlow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.stepPill {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+
+.gemIcon {
+  color: #c084fc;
+}
+
+.flowArrow {
+  color: var(--color-text-dim);
+}
+
+.activeConvert {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: rgba(6, 182, 212, 0.3);
+  color: #38bdf8;
+}
+
+.spinIcon {
+  animation: spin 4s linear infinite;
+}
+
+.vePill {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: #fbbf24;
+}
+
+.veMiniBadge {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #f59e0b;
+  color: #0f172a;
+  font-size: 0.6rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rateBadge {
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.35rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.rateBadge strong {
+  color: #fbbf24;
+}
+
+.ctaGroup {
+  margin-top: 0.25rem;
+}
+
+/* Visual Stage Right Column */
+.visualCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exchangeStage {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.ambientBacklight {
+  position: absolute;
+  width: 280px;
+  height: 200px;
+  background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.2) 0%, rgba(139, 92, 246, 0.2) 50%, transparent 80%);
+}
+
+/* Gem Card 3D */
+.gemCard3D {
+  position: relative;
+  width: 125px;
+  height: 165px;
+  background: linear-gradient(135deg, #2b183b, #150b1e);
+  border: 2px solid rgba(192, 132, 252, 0.4);
+  border-radius: 18px;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  transform: rotate(-4deg);
+  transition: transform 0.3s ease;
+}
+
+.gemCard3D:hover {
+  transform: rotate(-2deg) translateY(-4px);
+}
+
+.cardHeader {
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: #c084fc;
+  letter-spacing: 1px;
+}
+
+.gemGraphicContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.bigGem {
+  filter: drop-shadow(0 0 12px rgba(192, 132, 252, 0.7));
+  animation: pulseGem 3s ease-in-out infinite alternate;
+}
+
+/* Central Exchange Arrow Button */
+.exchangeArrowCircle {
+  position: relative;
+  z-index: 4;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #06b6d4, #2563eb);
+  color: white;
+  border: 3px solid #161827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(6, 182, 212, 0.5);
+}
+
+.exchangeArrowIcon {
+  animation: spin 8s linear infinite;
+}
+
+/* VE Card 3D */
+.veCard3D {
+  position: relative;
+  width: 125px;
+  height: 165px;
+  background: linear-gradient(135deg, #332711, #191207);
+  border: 2px solid rgba(245, 158, 11, 0.4);
+  border-radius: 18px;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  transform: rotate(4deg);
+  transition: transform 0.3s ease;
+}
+
+.veCard3D:hover {
+  transform: rotate(2deg) translateY(-4px);
+}
+
+.cardHeaderGold {
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: #fbbf24;
+  letter-spacing: 1px;
+}
+
+.veGraphicContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.bigVeCoin {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+  color: #0f172a;
+  font-size: 1.1rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fef08a;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
+}
+
+.verifiedCheckBadge {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #10b981;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+/* Payout Options Strip */
+.payoutStrip {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  gap: 0.75rem;
+  z-index: 5;
+}
+
+.payoutBadge {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 0.35rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  color: #f8fafc;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.giftIcon { color: #f472b6; }
+.bankIcon { color: #38bdf8; }
+
+/* Keyframe Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseGem {
+  0% { transform: scale(0.95); }
+  100% { transform: scale(1.08); }
+}
+
+/* Responsive Rules for Tablet & Mobile */
+@media (max-width: 992px) {
+  .bannerGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .visualCol {
+    order: -1;
+    width: 100%;
+  }
+
+  .exchangeStage {
+    height: 210px;
+  }
+
+  .gemCard3D, .veCard3D {
+    width: 105px;
+    height: 140px;
+    padding: 0.65rem;
+  }
+
+  .bigGem { width: 28px; height: 28px; }
+  .bigVeCoin { width: 40px; height: 40px; font-size: 0.9rem; }
+  .exchangeArrowCircle { width: 38px; height: 38px; }
+
+  .contentCol {
+    align-items: flex-start;
+    text-align: left;
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 1.85rem;
+  }
+
+  .description {
+    font-size: 0.88rem;
+  }
+
+  .redemptionFlow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .rateBadge {
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+
+  .ctaGroup {
+    width: 100%;
+  }
+
+  .ctaGroup > * {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .payoutStrip {
+    bottom: 5px;
+    gap: 0.5rem;
+  }
+
+  .payoutBadge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+  }
+}

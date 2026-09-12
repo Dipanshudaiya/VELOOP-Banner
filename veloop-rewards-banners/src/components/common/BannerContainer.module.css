@@ -1,0 +1,87 @@
+.bannerCard {
+  position: relative;
+  width: 100%;
+  min-height: 410px;
+  background-color: #1a1d2e;
+  background-image: radial-gradient(circle at 10% 20%, rgba(30, 35, 60, 0.9) 0%, rgba(22, 24, 39, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.bannerCard:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.radialHighlight {
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.innerContent {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 2.25rem;
+}
+
+/* Color Variants */
+.blue .radialHighlight {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.14) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.gold .radialHighlight {
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.purple .radialHighlight {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.14) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.cyan .radialHighlight {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.14) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+/* Responsive Height Adjustments */
+@media (max-width: 1024px) {
+  .bannerCard {
+    min-height: 380px;
+  }
+  .innerContent {
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bannerCard {
+    min-height: 330px;
+  }
+  .innerContent {
+    padding: 1.5rem 1.25rem;
+  }
+}

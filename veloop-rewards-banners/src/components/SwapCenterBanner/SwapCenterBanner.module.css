@@ -1,0 +1,505 @@
+.bannerGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.title {
+  font-family: var(--font-family-display);
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 520px;
+  margin: 0;
+}
+
+/* Conversion Preview Row */
+.conversionPreview {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 0.65rem 1rem;
+  width: fit-content;
+}
+
+.currencyPill {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.currencyIconVE {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+  color: #0f172a;
+  font-size: 0.85rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+}
+
+.currencyIconSVE {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, #1d4ed8);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(56, 189, 248, 0.3);
+}
+
+.currencyName {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--color-text-dim);
+  font-weight: 600;
+}
+
+.currencyAmount {
+  display: block;
+  font-size: 0.92rem;
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.swapToggleBtn {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #fbbf24;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.swapToggleBtn:hover {
+  background: rgba(245, 158, 11, 0.3);
+  transform: scale(1.1);
+}
+
+.swapIcon {
+  transition: transform 0.4s ease;
+}
+
+.swapIcon.rotated {
+  transform: rotate(180deg);
+}
+
+.conversionRateTag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.rateCheckIcon {
+  color: #fbbf24;
+}
+
+.ctaGroup {
+  margin-top: 0.25rem;
+}
+
+/* Visual Stage Right Column */
+.visualCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.walletStage {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.walletBackdrop {
+  position: absolute;
+  width: 250px;
+  height: 230px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 1;
+}
+
+.walletHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.walletTitle {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--color-text-dim);
+  letter-spacing: 0.8px;
+}
+
+.walletDots {
+  color: var(--color-text-dim);
+  font-size: 0.8rem;
+}
+
+.walletSubheader {
+  font-size: 0.85rem;
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.sliderBarContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sliderBarLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+.sliderTrack {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.sliderFillGold {
+  height: 100%;
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+  border-radius: 4px;
+}
+
+.sliderFillBlue {
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+  border-radius: 4px;
+}
+
+/* Floating Currency Cards */
+.currencyCard {
+  position: absolute;
+  width: 160px;
+  height: 105px;
+  border-radius: 16px;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 3;
+}
+
+.cardVE {
+  background: linear-gradient(135deg, #2d2613, #1e190e);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  top: 35px;
+  left: 20px;
+}
+
+.cardSVE {
+  background: linear-gradient(135deg, #112544, #0b172a);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  bottom: 35px;
+  right: 20px;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.cardSub {
+  font-size: 0.55rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.chipGraphic {
+  width: 22px;
+  height: 16px;
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+  border-radius: 4px;
+}
+
+.chipGraphicBlue {
+  width: 22px;
+  height: 16px;
+  background: linear-gradient(135deg, #38bdf8, #1d4ed8);
+  border-radius: 4px;
+}
+
+.cardCoinBadge {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #0f172a;
+  font-weight: 900;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+.cardStarBadge {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, #1d4ed8);
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+}
+
+/* Central Swap Circle */
+.centralSwapCircle {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border: 3px solid #161827;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.centralSwapCircle:hover {
+  transform: scale(1.12);
+}
+
+.circleSwapIcon {
+  transition: transform 0.5s ease;
+}
+
+.spin180 {
+  transform: rotate(180deg);
+}
+
+/* Swapped Card Animation Classes */
+.swapLeft {
+  transform: translate(15px, 20px) rotate(-4deg);
+}
+
+.swapRight {
+  transform: translate(-15px, -20px) rotate(4deg);
+}
+
+/* Responsive Rules for Tablet */
+@media (max-width: 992px) {
+  .bannerGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .visualCol {
+    order: -1;
+    width: 100%;
+  }
+  .walletStage {
+    height: 180px;
+  }
+  .contentCol {
+    gap: 0.85rem;
+  }
+  .title {
+    font-size: 1.85rem;
+  }
+  .description {
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+  .conversionPreview {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .ctaGroup {
+    width: 100%;
+  }
+  .ctaGroup > * {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Responsive Rules for Mobile */
+@media (max-width: 768px) {
+  .bannerGrid {
+    gap: 0.85rem;
+  }
+  .contentCol {
+    gap: 0.7rem;
+  }
+  .walletStage {
+    height: 160px;
+  }
+  .walletBackdrop {
+    width: 200px;
+    height: 150px;
+    padding: 0.85rem;
+    gap: 0.5rem;
+    border-radius: 14px;
+  }
+  .walletTitle {
+    font-size: 0.6rem;
+  }
+  .walletSubheader {
+    font-size: 0.75rem;
+  }
+  .sliderBarLabel {
+    font-size: 0.65rem;
+  }
+  .sliderTrack {
+    height: 4px;
+  }
+  .currencyCard {
+    width: 120px;
+    height: 78px;
+    border-radius: 12px;
+    padding: 0.6rem;
+  }
+  .cardVE {
+    top: 18px;
+    left: 10px;
+  }
+  .cardSVE {
+    bottom: 18px;
+    right: 10px;
+  }
+  .cardTitle {
+    font-size: 0.85rem;
+  }
+  .cardSub {
+    font-size: 0.5rem;
+  }
+  .chipGraphic, .chipGraphicBlue {
+    width: 18px;
+    height: 12px;
+  }
+  .cardCoinBadge, .cardStarBadge {
+    width: 26px;
+    height: 26px;
+    font-size: 0.7rem;
+    right: 8px;
+    bottom: 8px;
+  }
+  .centralSwapCircle {
+    width: 40px;
+    height: 40px;
+  }
+  .swapLeft {
+    transform: translate(10px, 12px) rotate(-3deg);
+  }
+  .swapRight {
+    transform: translate(-10px, -12px) rotate(3deg);
+  }
+  .title {
+    font-size: 1.65rem;
+    line-height: 1.2;
+  }
+  .description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .conversionPreview {
+    padding: 0.45rem 0.7rem;
+    gap: 0.5rem;
+    border-radius: 12px;
+  }
+  .currencyIconVE, .currencyIconSVE {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+  .currencyName {
+    font-size: 0.65rem;
+  }
+  .currencyAmount {
+    font-size: 0.82rem;
+  }
+  .swapToggleBtn {
+    width: 30px;
+    height: 30px;
+  }
+  .conversionRateTag {
+    font-size: 0.72rem;
+  }
+  .ctaGroup {
+    margin-top: 0.15rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 1.5rem;
+  }
+}

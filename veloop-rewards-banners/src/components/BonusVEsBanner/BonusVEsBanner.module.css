@@ -1,0 +1,319 @@
+.bannerGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.title {
+  font-family: var(--font-family-display);
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 520px;
+  margin: 0;
+}
+
+/* Checklist Row */
+.checklistRow {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.checkItem {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.checkIconBox {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkItem strong {
+  display: block;
+  font-size: 0.75rem;
+  color: #f8fafc;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.checkItem span {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--color-text-dim);
+}
+
+.doneCheck {
+  color: #3b82f6;
+  margin-left: auto;
+}
+
+.ctaGroup {
+  margin-top: 0.25rem;
+}
+
+/* Visual Stage Right Column */
+.visualCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vaultStage {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goldGlowRing {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, rgba(245, 158, 11, 0.05) 60%, rgba(0, 0, 0, 0) 80%);
+  animation: glowPulse 3s ease-in-out infinite alternate;
+}
+
+.bonusPedestal {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meterCircle {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #2e2614, #18140a);
+  border: 3px solid #f59e0b;
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.4), inset 0 0 15px rgba(245, 158, 11, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: floatPedestal 4s ease-in-out infinite alternate;
+}
+
+.meterText {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #fbbf24;
+  letter-spacing: 1px;
+}
+
+.meterValue {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.plusBadge {
+  position: absolute;
+  top: -6px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #3b82f6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #161827;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.5);
+}
+
+.mainVeCoin {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  color: #0f172a;
+  font-weight: 900;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -24px;
+  z-index: 4;
+  border: 2px solid #fef08a;
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.5);
+}
+
+/* Gold Vault Box Graphic */
+.goldVaultBox {
+  position: absolute;
+  right: 15px;
+  bottom: 25px;
+  width: 100px;
+  height: 110px;
+  background: linear-gradient(135deg, #242a3a, #141824);
+  border: 2px solid rgba(245, 158, 11, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.vaultBody {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vaultInnerGlow {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.4) 0%, transparent 70%);
+}
+
+.vaultWheel {
+  font-size: 2.2rem;
+  color: #f59e0b;
+  opacity: 0.8;
+  animation: spinWheel 12s linear infinite;
+}
+
+/* Floating Gold Coins */
+.goldCoin {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+  color: #0f172a;
+  font-weight: 900;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fef08a;
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4);
+  z-index: 4;
+}
+
+.c1 { top: 30px; left: 30px; animation: floatC1 3.8s ease-in-out infinite alternate; }
+.c2 { top: 40px; right: 40px; animation: floatC2 4.2s ease-in-out infinite alternate 0.5s; }
+.c3 { bottom: 40px; left: 45px; animation: floatC1 3.5s ease-in-out infinite alternate 1s; }
+.c4 { bottom: 30px; right: 110px; animation: floatC2 3.9s ease-in-out infinite alternate 1.5s; }
+
+.sparkle {
+  position: absolute;
+  color: #fef08a;
+  z-index: 5;
+  animation: pulseSparkle 2s ease-in-out infinite alternate;
+}
+
+.sp1 { top: 25px; right: 80px; }
+.sp2 { bottom: 70px; left: 25px; animation-delay: 1s; }
+
+/* Keyframe Animations */
+@keyframes glowPulse {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  100% { transform: scale(1.05); opacity: 0.9; }
+}
+
+@keyframes floatPedestal {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+@keyframes spinWheel {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes floatC1 {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-12px) rotate(12deg); }
+}
+
+@keyframes floatC2 {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-14px) rotate(-12px); }
+}
+
+@keyframes pulseSparkle {
+  0% { opacity: 0.3; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Responsive Rules for Tablet & Mobile */
+@media (max-width: 992px) {
+  .bannerGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .visualCol {
+    order: -1;
+    width: 100%;
+  }
+  .vaultStage {
+    height: 210px;
+  }
+  .title {
+    font-size: 1.85rem;
+  }
+  .description {
+    font-size: 0.88rem;
+  }
+  .checklistRow {
+    flex-direction: column;
+    width: 100%;
+  }
+  .checkItem {
+    width: 100%;
+  }
+  .ctaGroup {
+    width: 100%;
+  }
+  .ctaGroup > * {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 1.6rem;
+  }
+}
