@@ -1,319 +1,1081 @@
+/* =========================================================
+   VELOOP DAILY BONUS BANNER
+   HR / DESIGN REFERENCE MATCH — PERFECT ALIGNMENT & MOBILE RESPONSIVE
+   SOLID PRINCIPLES ARCHITECTURE & FULL CLASS ALIASES
+========================================================= */
+
+/* Main Container Grid */
+.bannerGridContainer,
 .bannerGrid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 2.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
   align-items: center;
-}
-
-.contentCol {
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-}
-
-.title {
-  font-family: var(--font-family-display);
-  font-size: 2.35rem;
-  font-weight: 800;
-  color: var(--color-text-main);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin: 0;
-}
-
-.description {
-  color: var(--color-text-muted);
-  font-size: 0.95rem;
-  line-height: 1.55;
-  max-width: 520px;
-  margin: 0;
-}
-
-/* Checklist Row */
-.checklistRow {
-  display: flex;
-  gap: 0.65rem;
-  flex-wrap: wrap;
-}
-
-.checkItem {
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 0.5rem 0.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.checkIconBox {
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
-  background: rgba(245, 158, 11, 0.15);
-  color: #fbbf24;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.checkItem strong {
-  display: block;
-  font-size: 0.75rem;
-  color: #f8fafc;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.checkItem span {
-  display: block;
-  font-size: 0.65rem;
-  color: var(--color-text-dim);
-}
-
-.doneCheck {
-  color: #3b82f6;
-  margin-left: auto;
-}
-
-.ctaGroup {
-  margin-top: 0.25rem;
-}
-
-/* Visual Stage Right Column */
-.visualCol {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.vaultStage {
+  min-height: 480px;
+  padding: 2.8rem 3rem;
   position: relative;
-  width: 100%;
-  height: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at 82% 42%,
+      rgba(245, 158, 11, 0.22) 0%,
+      rgba(168, 85, 247, 0.15) 35%,
+      transparent 72%
+    ),
+    radial-gradient(
+      circle at 18% 78%,
+      rgba(59, 130, 246, 0.12) 0%,
+      transparent 50%
+    ),
+    #030514;
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  box-shadow:
+    inset 0 0 70px rgba(15, 23, 42, 0.85),
+    0 20px 50px rgba(0, 0, 0, 0.65);
 }
 
-.goldGlowRing {
+.bannerGridContainer::before,
+.bannerGrid::before {
+  content: '';
   position: absolute;
-  width: 230px;
-  height: 230px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, rgba(245, 158, 11, 0.05) 60%, rgba(0, 0, 0, 0) 80%);
-  animation: glowPulse 3s ease-in-out infinite alternate;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(245, 158, 11, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245, 158, 11, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  opacity: 0.7;
 }
 
-.bonusPedestal {
+
+/* =========================================================
+   LEFT CONTENT COLUMN
+========================================================= */
+
+.leftInfoCol,
+.contentCol {
   position: relative;
-  z-index: 3;
+  z-index: 10;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+/* 3D Hero Heading Group */
+.heroHeadingWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.goldOrbitRing {
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  width: 320px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #fbbf24;
+  box-shadow:
+    0 0 25px rgba(245, 158, 11, 0.6),
+    inset 0 0 15px rgba(245, 158, 11, 0.4);
+  transform: rotate(-12deg);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.headingTopRow {
+  position: relative;
+  z-index: 2;
+  display: flex;
   align-items: center;
+  gap: 0.75rem;
 }
 
-.meterCircle {
+.calendar3dBadge {
   position: relative;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #2e2614, #18140a);
-  border: 3px solid #f59e0b;
-  box-shadow: 0 0 25px rgba(245, 158, 11, 0.4), inset 0 0 15px rgba(245, 158, 11, 0.3);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #7c3aed, #4c1d95);
+  border: 2px solid #a78bfa;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.5);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: floatPedestal 4s ease-in-out infinite alternate;
-}
-
-.meterText {
-  font-size: 0.65rem;
-  font-weight: 800;
-  color: #fbbf24;
-  letter-spacing: 1px;
-}
-
-.meterValue {
-  font-size: 1.6rem;
-  font-weight: 900;
   color: #ffffff;
-  line-height: 1;
 }
 
-.plusBadge {
+.starBadge {
   position: absolute;
   top: -6px;
-  right: 4px;
-  width: 24px;
-  height: 24px;
+  right: -6px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background: #3b82f6;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #161827;
-  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.5);
-}
-
-.mainVeCoin {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
-  color: #0f172a;
+  background: #fbbf24;
+  color: #000000;
+  font-size: 0.65rem;
   font-weight: 900;
-  font-size: 1.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -24px;
-  z-index: 4;
-  border: 2px solid #fef08a;
-  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.5);
+  box-shadow: 0 0 8px #fbbf24;
 }
 
-/* Gold Vault Box Graphic */
-.goldVaultBox {
-  position: absolute;
-  right: 15px;
-  bottom: 25px;
-  width: 100px;
-  height: 110px;
-  background: linear-gradient(135deg, #242a3a, #141824);
-  border: 2px solid rgba(245, 158, 11, 0.3);
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+.dailyText,
+.title {
+  font-family: var(--font-family-display, sans-serif);
+  font-size: clamp(2.8rem, 4.2vw, 3.8rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: 1px;
+  background: linear-gradient(180deg, #ffffff 0%, #a5b4fc 60%, #6366f1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+  margin: 0;
+}
+
+.crown3dBadge {
+  color: #fbbf24;
+  filter: drop-shadow(0 0 12px #fbbf24);
+  transform: rotate(15deg);
+}
+
+.bonusGoldTitle {
+  position: relative;
   z-index: 2;
-  overflow: hidden;
+  font-family: var(--font-family-display, sans-serif);
+  font-size: clamp(3.5rem, 5.5vw, 4.8rem);
+  font-weight: 950;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  background: linear-gradient(
+    180deg,
+    #fff6b2 0%,
+    #ffd000 30%,
+    #ff9000 70%,
+    #d45d00 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter:
+    drop-shadow(0 6px 0 #853b00)
+    drop-shadow(0 12px 25px rgba(245, 158, 11, 0.6));
+  margin-top: -0.1rem;
 }
 
-.vaultBody {
+
+/* Subtitle & Description */
+.heroDescriptionText,
+.description {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #e2e8f0;
+  margin: 0;
+  font-weight: 600;
+}
+
+.goldText {
+  color: #fbbf24;
+  font-weight: 800;
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+}
+
+
+/* Reward Strip */
+.rewardItemsStrip,
+.rewardStrip {
   width: 100%;
-  height: 100%;
+  max-width: 540px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  padding: 0.8rem 0.6rem;
+  background: rgba(9, 15, 48, 0.9);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  box-shadow:
+    inset 0 0 20px rgba(99, 102, 241, 0.1),
+    0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.rewardPillItem,
+.rewardItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  text-align: center;
+  padding: 0.4rem 0.2rem;
+  border-right: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.rewardPillItem:last-child,
+.rewardItem:last-child {
+  border-right: none;
+}
+
+.iconCircle3d,
+.rewardIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.coinIconGold,
+.coinIcon {
+  background: radial-gradient(circle at 35% 30%, #fff4a3, #ffc400 40%, #ef9700 75%, #bd6100);
+  border: 2px solid #fff1a8;
+  color: #fff4b0;
+  font-size: 0.75rem;
+  font-weight: 900;
+  box-shadow: 0 0 18px rgba(245, 158, 11, 0.45);
+}
+
+.gemIconPurple,
+.gemIcon {
+  background: radial-gradient(circle at 35% 30%, #c084fc, #9333ea 50%, #581c87);
+  border: 2px solid #e9d5ff;
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.5);
+}
+
+.xpIconYellow,
+.xpIcon {
+  background: radial-gradient(circle at 35% 30%, #fef08a, #eab308 50%, #854d0e);
+  border: 2px solid #fef9c3;
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(234, 179, 8, 0.5);
+}
+
+.xpTextTag {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  font-size: 0.6rem;
+  font-weight: 900;
+  color: #ffffff;
+  background: #000000;
+  padding: 0.05rem 0.25rem;
+  border-radius: 4px;
+}
+
+.giftIconPurple,
+.giftIcon {
+  background: radial-gradient(circle at 35% 30%, #f472b6, #db2777 50%, #831843);
+  border: 2px solid #fbcfe8;
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(219, 39, 119, 0.5);
+}
+
+.rewardItemLabels,
+.rewardText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.rewardTitle {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.rewardSub {
+  font-size: 0.72rem;
+  color: rgba(226, 232, 240, 0.75);
+}
+
+
+/* Main Gold CTA Button */
+.ctaWrapperArea,
+.ctaGroup {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.4rem;
+}
+
+.btnSparkle {
+  position: absolute;
+  color: #fbbf24;
+  font-size: 1.2rem;
+  filter: drop-shadow(0 0 8px #fbbf24);
+  animation: sparkleBlink 2s ease-in-out infinite alternate;
+}
+
+.sparkleLeft {
+  left: -20px;
+}
+
+.sparkleRight {
+  right: -20px;
+  animation-delay: 1s;
+}
+
+@keyframes sparkleBlink {
+  0% { transform: scale(0.8); opacity: 0.4; }
+  100% { transform: scale(1.3); opacity: 1; }
+}
+
+.goldMainCtaBtn,
+.claimButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    #ffd84d 0%,
+    #ffb000 55%,
+    #f38b00 100%
+  );
+  color: #182044;
+  font-family: var(--font-family-base, sans-serif);
+  font-size: 1rem;
+  font-weight: 900;
+  border: 2px solid #ffe066;
+  box-shadow:
+    0 0 25px rgba(245, 158, 11, 0.5),
+    0 10px 25px rgba(0, 0, 0, 0.35),
+    inset 0 2px 0 rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.goldMainCtaBtn:hover,
+.claimButton:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 0 35px rgba(245, 158, 11, 0.7),
+    0 15px 30px rgba(0, 0, 0, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.7);
+}
+
+.ctaIconBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctaArrowIcon {
+  transition: transform 0.25s ease;
+}
+
+.goldMainCtaBtn:hover .ctaArrowIcon {
+  transform: translateX(5px);
+}
+
+.claimedStateBtn,
+.claimedButton {
+  background: linear-gradient(180deg, #34d399 0%, #059669 100%) !important;
+  color: #ffffff !important;
+  border-color: #6ee7b7 !important;
+}
+
+
+/* =========================================================
+   RIGHT VISUAL COLUMN & STAGE VIEWPORT
+========================================================= */
+
+.rightStageCol,
+.visualCol {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
-.vaultInnerGlow {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.4) 0%, transparent 70%);
-}
-
-.vaultWheel {
-  font-size: 2.2rem;
-  color: #f59e0b;
-  opacity: 0.8;
-  animation: spinWheel 12s linear infinite;
-}
-
-/* Floating Gold Coins */
-.goldCoin {
-  position: absolute;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #fbbf24, #d97706);
-  color: #0f172a;
-  font-weight: 900;
-  font-size: 0.85rem;
+.stageViewportArea,
+.bonusScene {
+  position: relative;
+  width: 100%;
+  max-width: 530px;
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #fef08a;
-  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4);
-  z-index: 4;
 }
 
-.c1 { top: 30px; left: 30px; animation: floatC1 3.8s ease-in-out infinite alternate; }
-.c2 { top: 40px; right: 40px; animation: floatC2 4.2s ease-in-out infinite alternate 0.5s; }
-.c3 { bottom: 40px; left: 45px; animation: floatC1 3.5s ease-in-out infinite alternate 1s; }
-.c4 { bottom: 30px; right: 110px; animation: floatC2 3.9s ease-in-out infinite alternate 1.5s; }
-
-.sparkle {
+/* Ambient Glows */
+.ambientGoldGlow,
+.sceneGlow {
   position: absolute;
-  color: #fef08a;
+  top: 15%;
+  right: 15%;
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.32) 0%, transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.ambientPurpleGlow {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.28) 0%, transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+/* Handwritten Annotation: 7 Days Better Rewards ↪ */
+.annotation7DaysNote,
+.sevenDaysText {
+  position: absolute;
+  top: 45px;
+  left: 15px;
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transform: rotate(-8deg);
+  color: #ffffff;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.7));
+}
+
+.annotationCrown {
+  color: #fbbf24;
+  filter: drop-shadow(0 0 8px #fbbf24);
+  margin-bottom: 2px;
+}
+
+.annotationText {
+  font-family: 'Georgia', 'Caveat', cursive, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.annotationSub {
+  font-family: 'Georgia', 'Caveat', cursive, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: rgba(248, 250, 252, 0.95);
+  line-height: 1.1;
+}
+
+.curvedArrowSvg {
+  margin-top: 4px;
+  margin-left: 10px;
+  filter: drop-shadow(0 0 6px #fbbf24);
+}
+
+
+/* 3D Daily Login Calendar Card */
+.calendarCard3d,
+.calendarBook {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-40%) rotateY(-6deg) rotateX(4deg) rotateZ(2deg);
+  width: 320px;
+  background: linear-gradient(145deg, #101740, #080d2b);
+  border: 2.5px solid rgba(245, 158, 11, 0.65);
+  border-radius: 18px;
+  padding: 0.85rem;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.65),
+    0 0 35px rgba(245, 158, 11, 0.25);
+  z-index: 8;
+}
+
+.calendarSpiralHeader,
+.spiralRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  margin-top: -1.3rem;
+  margin-bottom: 0.45rem;
+}
+
+.spiralRing {
+  width: 16px;
+  height: 22px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #fbbf24 0%, #d97706 100%);
+  border: 1.8px solid #fef08a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.calendarTitleBar,
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 0.65rem;
+}
+
+.checkHeaderIcon {
+  color: #fbbf24;
+}
+
+.calendarHeaderText {
+  font-size: 0.85rem;
+  font-weight: 850;
+  color: #fbbf24;
+  letter-spacing: 1.2px;
+}
+
+.daysGridContainer,
+.daysRow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.dayBoxItem,
+.dayBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.45rem 0.1rem;
+  border-radius: 9px;
+  background: rgba(30, 41, 59, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dayBoxLabel {
+  font-size: 0.54rem;
+  font-weight: 800;
+  color: rgba(226, 232, 240, 0.75);
+}
+
+.dayCheckBadge {
+  color: #fbbf24;
+}
+
+.day7GiftBoxItem,
+.activeDay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.45rem 0.1rem;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #8b5cf6, #5b21b6);
+  border: 1.5px solid #d8b4fe;
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.75);
+}
+
+.day7Label {
+  font-size: 0.54rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.day7GiftIcon {
+  color: #fbbf24;
+}
+
+
+/* 3D Open Gold VE Treasure Chest — CENTERED ON PEDESTAL */
+.treasureChest3dWrapper,
+.treasureChest {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  width: 260px;
+  height: 185px;
+}
+
+.chestAuraGlow {
+  position: absolute;
+  inset: -25px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.5) 0%, transparent 70%);
+  filter: blur(25px);
+  pointer-events: none;
+}
+
+.goldRibbonRight {
+  position: absolute;
+  right: -15px;
+  top: 25px;
+  width: 120px;
+  height: 100px;
+  border-radius: 50%;
+  border: 7px solid #fbbf24;
+  border-left: none;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.45);
+  transform: rotate(15deg);
+  pointer-events: none;
+  z-index: 8;
+}
+
+.chestLidOpen,
+.chestLid {
+  position: absolute;
+  top: -28px;
+  left: 10px;
+  width: 240px;
+  height: 70px;
+  border-radius: 60px 60px 14px 14px;
+  background: linear-gradient(180deg, #fbbf24 0%, #d97706 60%, #92400e 100%);
+  border: 3.5px solid #fef08a;
+  transform: rotateX(-32deg);
+  box-shadow: 0 -10px 25px rgba(245, 158, 11, 0.55);
+}
+
+.lidInnerDarkPanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.65);
+  margin: 4px;
+  border-radius: 50px 50px 8px 8px;
+}
+
+.chestBodyMain,
+.chestBody {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 260px;
+  height: 130px;
+  border-radius: 18px 18px 28px 28px;
+  background: linear-gradient(180deg, #f59e0b 0%, #d97706 50%, #78350f 100%);
+  border: 4px solid #fef08a;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chestFrontPanel,
+.chestFront {
+  width: 165px;
+  height: 80px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #1e1b4b, #0f172a);
+  border: 2.5px solid #fbbf24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.75);
+}
+
+.veEmblemLogo {
+  font-family: var(--font-family-display, sans-serif);
+  font-size: 2.6rem;
+  font-weight: 950;
+  color: #fbbf24;
+  letter-spacing: -1px;
+  text-shadow: 0 0 20px rgba(245, 158, 11, 0.95);
+}
+
+.veLetterV {
+  color: #fbbf24;
+}
+
+.veLetterE {
+  color: #ffffff;
+}
+
+.chestLockBadge,
+.chestLock {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 32px;
+  border-radius: 7px;
+  background: #fbbf24;
+  border: 2px solid #78350f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lockKeyhole {
+  width: 9px;
+  height: 11px;
+  border-radius: 4px;
+  background: #78350f;
+}
+
+/* Overflowing Treasure Contents inside Chest */
+.overflowingTreasureContents,
+.chestContents {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.veCoinSvgWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.5));
+}
+
+.chestVeCoin,
+.chestCoin {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cCoinCenter { top: -22px; left: 100px; transform: scale(1.15) rotate(4deg); z-index: 25; }
+.cCoinTopLeft { top: -25px; left: 50px; transform: rotate(-14deg); z-index: 20; }
+.cCoinTopRight { top: -24px; right: 60px; transform: rotate(12deg); z-index: 20; }
+.cCoinMidLeft { top: -5px; left: 20px; transform: rotate(-22deg); z-index: 18; }
+.cCoinMidRight { top: 0px; right: 30px; transform: rotate(18deg); z-index: 18; }
+
+/* Platform Floor Coins */
+.floorCoinLeft { bottom: -18px; left: -18px; transform: rotate(-15deg); z-index: 30; }
+.floorCoinCenter { bottom: -22px; left: 108px; transform: rotate(8deg); z-index: 30; }
+.floorCoinRight { bottom: -15px; right: -12px; transform: rotate(18deg); z-index: 30; }
+
+/* 3D Faceted Crystal Diamonds / Gems */
+.chestGem {
+  position: absolute;
+  z-index: 22;
+}
+
+.cGemTopLeftBlue { top: -45px; left: 40px; transform: rotate(-15deg); z-index: 28; }
+.cGemTopRightPurple { top: -42px; right: 70px; transform: rotate(20deg); z-index: 28; }
+.cGemMidLeftPurple { top: -12px; left: 10px; transform: rotate(-25deg); }
+.cGemBottomCenterPurple { bottom: -25px; left: 85px; transform: rotate(15deg); z-index: 35; }
+.cGemBottomRightCyan { bottom: -25px; right: 30px; transform: rotate(-12deg); z-index: 35; }
+.cGemFarRightGiant { bottom: -30px; right: -40px; transform: rotate(15deg); z-index: 35; }
+
+
+/* 3D Pedestal Platform Base — PERFECTLY CENTERED BENEATH CHEST */
+.pedestalPlatform3d,
+.platform {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 440px;
+  height: 80px;
   z-index: 5;
-  animation: pulseSparkle 2s ease-in-out infinite alternate;
 }
 
-.sp1 { top: 25px; right: 80px; }
-.sp2 { bottom: 70px; left: 25px; animation-delay: 1s; }
-
-/* Keyframe Animations */
-@keyframes glowPulse {
-  0% { transform: scale(0.95); opacity: 0.5; }
-  100% { transform: scale(1.05); opacity: 0.9; }
+.pedestalTopGlowRing,
+.platformGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.55) 0%, transparent 80%);
+  border: 2.5px solid rgba(245, 158, 11, 0.75);
+  box-shadow: 0 0 35px rgba(245, 158, 11, 0.65);
 }
 
-@keyframes floatPedestal {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+.pedestalMetallicEdge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 412px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #1e1b4b 0%, #090d26 100%);
+  border: 2px solid rgba(168, 85, 247, 0.55);
 }
 
-@keyframes spinWheel {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.pedestalNeonGoldRing {
+  position: absolute;
+  top: 4px;
+  left: 15px;
+  width: 410px;
+  height: 28px;
+  border-radius: 50%;
+  border-bottom: 4px solid #fbbf24;
+  box-shadow: 0 4px 20px #fbbf24;
 }
 
-@keyframes floatC1 {
-  0% { transform: translateY(0) rotate(0deg); }
-  100% { transform: translateY(-12px) rotate(12deg); }
+.pedestalNeonBlueRing {
+  position: absolute;
+  top: 12px;
+  left: 22px;
+  width: 396px;
+  height: 28px;
+  border-radius: 50%;
+  border-bottom: 3px solid #00f0ff;
+  box-shadow: 0 4px 20px #00f0ff;
 }
 
-@keyframes floatC2 {
-  0% { transform: translateY(0) rotate(0deg); }
-  100% { transform: translateY(-14px) rotate(-12px); }
+.pedestalBaseAura {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 460px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(168, 85, 247, 0.65) 0%, transparent 75%);
+  filter: blur(18px);
 }
 
-@keyframes pulseSparkle {
-  0% { opacity: 0.3; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1.2); }
+
+/* Floating 3D Gold VEs Coins */
+.floatingGoldCoin,
+.coin {
+  position: absolute;
+  z-index: 18;
+  animation: floatAnim 4.5s ease-in-out infinite alternate;
 }
 
-/* Responsive Rules for Tablet & Mobile */
+.fCoinTopLeft, .coin1 { top: 35px; left: 15px; transform: rotate(-14deg); }
+.fCoinMidLeft, .coin2 { top: 220px; left: -10px; transform: rotate(12deg); animation-delay: 1.2s; }
+
+/* Floating 3D Purple Diamonds */
+.floatingPurpleGem,
+.floatingGem {
+  position: absolute;
+  z-index: 19;
+  animation: floatAnim 5s ease-in-out infinite alternate;
+}
+
+.fGemTopRight, .gem1 { top: 30px; right: 85px; animation-delay: 0.5s; }
+.fGemMidRight, .gem2 { top: 170px; right: 10px; animation-delay: 1.8s; }
+
+@keyframes floatAnim {
+  0% { transform: translateY(0) rotate(-6deg); }
+  100% { transform: translateY(-12px) rotate(6deg); }
+}
+
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS (TABLET & MOBILE)
+   NO OVERLAPPING OR MIXING ON MOBILE
+========================================================= */
+
 @media (max-width: 992px) {
+  .bannerGridContainer,
   .bannerGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    padding: 2.2rem 1.8rem;
+    min-height: auto;
   }
-  .visualCol {
-    order: -1;
-    width: 100%;
+
+  .leftInfoCol,
+  .contentCol {
+    align-items: center;
+    text-align: center;
   }
-  .vaultStage {
-    height: 210px;
+
+  .heroHeadingWrapper {
+    align-items: center;
   }
-  .title {
-    font-size: 1.85rem;
+
+  .goldOrbitRing {
+    left: 50%;
+    transform: translateX(-50%) rotate(-12deg);
   }
+
+  .heroDescriptionText,
   .description {
-    font-size: 0.88rem;
+    max-width: 100%;
   }
-  .checklistRow {
-    flex-direction: column;
-    width: 100%;
+
+  .rewardItemsStrip,
+  .rewardStrip {
+    max-width: 100%;
   }
-  .checkItem {
-    width: 100%;
-  }
+
+  .ctaWrapperArea,
   .ctaGroup {
     width: 100%;
-  }
-  .ctaGroup > * {
-    width: 100%;
     justify-content: center;
+  }
+
+  .rightStageCol,
+  .visualCol {
+    order: -1;
+  }
+
+  .stageViewportArea,
+  .bonusScene {
+    height: 360px;
+    width: 100%;
+  }
+
+  .calendarCard3d,
+  .calendarBook {
+    top: 5px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) scale(0.88);
+    width: 310px;
+    z-index: 5;
+  }
+
+  .treasureChest3dWrapper,
+  .treasureChest {
+    bottom: 10px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) scale(0.82);
+    z-index: 20;
+  }
+
+  .pedestalPlatform3d,
+  .platform {
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.82);
+    z-index: 3;
+  }
+
+  .annotation7DaysNote,
+  .sevenDaysText {
+    top: 15px;
+    left: 10px;
+    transform: rotate(-6deg) scale(0.8);
+    z-index: 25;
+  }
+
+  .fCoinMidLeft {
+    display: none;
+  }
+
+  .cGemFarRightGiant {
+    display: none;
   }
 }
 
 @media (max-width: 576px) {
+  .bannerGridContainer,
+  .bannerGrid {
+    padding: 1.4rem 0.8rem;
+    border-radius: 20px;
+  }
+
+  .dailyText,
+  .title {
+    font-size: clamp(1.8rem, 7.5vw, 2.4rem);
+  }
+
+  .bonusGoldTitle {
+    font-size: clamp(2.6rem, 10vw, 3.2rem);
+  }
+
+  .heroDescriptionText,
+  .description {
+    font-size: 0.92rem;
+  }
+
+  .rewardItemsStrip,
+  .rewardStrip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .rewardPillItem,
+  .rewardItem {
+    border-right: none;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    padding-bottom: 0.6rem;
+  }
+
+  .goldMainCtaBtn,
+  .claimButton {
+    width: 100%;
+  }
+
+  .stageViewportArea,
+  .bonusScene {
+    height: 300px;
+  }
+
+  .calendarCard3d,
+  .calendarBook {
+    top: 5px;
+    transform: translateX(-50%) scale(0.72);
+  }
+
+  .treasureChest3dWrapper,
+  .treasureChest {
+    bottom: 5px;
+    transform: translateX(-50%) scale(0.68);
+  }
+
+  .pedestalPlatform3d,
+  .platform {
+    bottom: -5px;
+    transform: translateX(-50%) scale(0.68);
+  }
+
+  .annotation7DaysNote,
+  .sevenDaysText {
+    top: 5px;
+    left: 2px;
+    transform: scale(0.68);
+  }
+}
+
+@media (max-width: 380px) {
+  .bannerGridContainer,
+  .bannerGrid {
+    padding: 1.2rem 0.5rem;
+  }
+
+  .dailyText,
   .title {
     font-size: 1.6rem;
+  }
+
+  .bonusGoldTitle {
+    font-size: 2.4rem;
+  }
+
+  .stageViewportArea,
+  .bonusScene {
+    height: 260px;
+  }
+
+  .calendarCard3d,
+  .calendarBook {
+    transform: translateX(-50%) scale(0.6);
+  }
+
+  .treasureChest3dWrapper,
+  .treasureChest {
+    transform: translateX(-50%) scale(0.56);
+  }
+
+  .pedestalPlatform3d,
+  .platform {
+    transform: translateX(-50%) scale(0.56);
   }
 }
