@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 
 import BannerContainer from '../common/BannerContainer';
+import VeLoopLogo from '../common/VeLoopLogo';
 import styles from './ReferEarnBanner.module.css';
 
 const ReferEarnBanner = () => {
@@ -77,6 +78,10 @@ const ReferEarnBanner = () => {
               LEFT CONTENT
           ======================================= */}
           <div className={styles.content}>
+
+            <div style={{ marginBottom: '0.4rem' }}>
+              <VeLoopLogo />
+            </div>
 
             {/* Badge */}
             <div className={styles.badge}>

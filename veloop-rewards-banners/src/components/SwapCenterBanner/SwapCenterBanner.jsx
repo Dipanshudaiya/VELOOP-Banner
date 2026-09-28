@@ -268,6 +268,7 @@ import {
 } from 'lucide-react';
 
 import BannerContainer from '../common/BannerContainer';
+import VeLoopLogo from '../common/VeLoopLogo';
 import RewardBadge from '../common/RewardBadge';
 import BannerCTA from '../common/BannerCTA';
 import styles from './SwapCenterBanner.module.css';
@@ -288,6 +289,10 @@ const SwapCenterBanner = () => {
 
           {/* ---------- LEFT CONTENT ---------- */}
           <div className={styles.contentCol}>
+
+            <div style={{ marginBottom: '0.4rem' }}>
+              <VeLoopLogo />
+            </div>
 
             <RewardBadge icon={<ArrowLeftRight size={15} />} variant="gold">
               SWAP CENTER

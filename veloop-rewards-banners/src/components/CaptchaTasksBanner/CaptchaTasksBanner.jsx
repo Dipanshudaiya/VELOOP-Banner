@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import BannerContainer from '../common/BannerContainer';
+import VeLoopLogo from '../common/VeLoopLogo';
 import CaptchaBadge from './subcomponents/CaptchaBadge';
 import CaptchaHeroContent from './subcomponents/CaptchaHeroContent';
 import CaptchaActions from './subcomponents/CaptchaActions';
@@ -41,6 +42,10 @@ const CaptchaTasksBanner = () => {
       <div className={styles.bannerContainerGrid}>
         {/* Left Column: Information & Actions */}
         <div className={styles.leftContentColumn}>
+          <div style={{ marginBottom: '0.4rem' }}>
+            <VeLoopLogo />
+          </div>
+
           <CaptchaBadge text="CAPTCHA TASKS" />
 
           <CaptchaHeroContent

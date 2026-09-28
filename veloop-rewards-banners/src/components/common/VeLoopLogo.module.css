@@ -1,0 +1,59 @@
+.logoWrapper {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  line-height: 1;
+}
+
+.logoImage {
+  width: auto;
+  height: 54px;
+  max-width: 240px;
+  object-fit: contain;
+  display: block;
+  filter:
+    drop-shadow(0 4px 14px rgba(0, 0, 0, 0.65))
+    drop-shadow(0 0 12px rgba(251, 191, 36, 0.25));
+  transition: transform 0.25s ease;
+}
+
+.logoWrapper:hover .logoImage {
+  transform: scale(1.02);
+}
+
+/* Medium variation (default) */
+.medium .logoImage {
+  height: 54px;
+}
+
+/* Small variation */
+.small .logoImage {
+  height: 44px;
+}
+
+/* Large variation */
+.large .logoImage {
+  height: 64px;
+}
+
+@media (max-width: 768px) {
+  .logoImage,
+  .medium .logoImage {
+    height: 44px;
+  }
+
+  .small .logoImage {
+    height: 36px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logoImage,
+  .medium .logoImage {
+    height: 38px;
+  }
+
+  .small .logoImage {
+    height: 32px;
+  }
+}

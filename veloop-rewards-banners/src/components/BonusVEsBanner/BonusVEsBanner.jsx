@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import BannerContainer from '../common/BannerContainer';
+import VeLoopLogo from '../common/VeLoopLogo';
 import BonusHeroHeading from './subcomponents/BonusHeroHeading';
 import BonusDescription from './subcomponents/BonusDescription';
 import BonusRewardStrip from './subcomponents/BonusRewardStrip';
@@ -24,13 +25,21 @@ const BonusVEsBanner = () => {
   return (
     <BannerContainer variant="gold">
       <div className={styles.bannerGridContainer}>
-        {/* Left Column: Hero Information & Rewards */}
+        {/* Corner Stylized Foliage Silhouettes */}
+        <div className={`${styles.cornerFoliage} ${styles.foliageBottomLeft}`} />
+        <div className={`${styles.cornerFoliage} ${styles.foliageBottomRight}`} />
+
+        {/* Left Column: Brand Logo, Hero Heading, Description, Perks & CTA */}
         <div className={styles.leftInfoCol}>
+          <div className={styles.brandLogoHeader}>
+            <VeLoopLogo />
+          </div>
+
           <BonusHeroHeading />
 
           <BonusDescription
             line1="Log In Daily, Collect"
-            highlight1="Rewards"
+            highlight1="Rewards,"
             line2="and Keep Your"
             highlight2="Streak Alive!"
           />
@@ -40,7 +49,7 @@ const BonusVEsBanner = () => {
           <BonusCTAButton claimed={claimed} onClaim={handleClaim} />
         </div>
 
-        {/* Right Column: 3D Visual Stage */}
+        {/* Right Column: 3D Stage with Double Neon Ring Pedestal & Glowing Treasure */}
         <div className={styles.rightStageCol}>
           <BonusVisualStage />
         </div>

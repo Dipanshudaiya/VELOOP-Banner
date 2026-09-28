@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import BannerContainer from '../common/BannerContainer';
+import VeLoopLogo from '../common/VeLoopLogo';
 import ExchangeBadge from './subcomponents/ExchangeBadge';
 import ExchangeHeroContent from './subcomponents/ExchangeHeroContent';
 import ExchangeFlowStrip from './subcomponents/ExchangeFlowStrip';
@@ -26,6 +27,10 @@ const ExchangeCenterBanner = () => {
       <div className={styles.bannerGridContainer}>
         {/* Left Column: Hero & Redemption Flow */}
         <div className={styles.leftInfoCol}>
+          <div style={{ marginBottom: '0.4rem' }}>
+            <VeLoopLogo />
+          </div>
+
           <ExchangeBadge text="REDEMPTION PORTAL" />
 
           <ExchangeHeroContent

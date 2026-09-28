@@ -1,18 +1,17 @@
 /* =========================================================
-   VELOOP DAILY BONUS BANNER
-   HR / DESIGN REFERENCE MATCH — PERFECT ALIGNMENT & MOBILE RESPONSIVE
-   SOLID PRINCIPLES ARCHITECTURE & FULL CLASS ALIASES
+   VELOOP DAILY BONUS BANNER — 100% DESIGN MATCH
+   Rich Glowing Aesthetics, Solid Principles & Responsive Layout
 ========================================================= */
 
 /* Main Container Grid */
 .bannerGridContainer,
 .bannerGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.05fr 0.95fr;
   gap: 2rem;
   align-items: center;
-  min-height: 480px;
-  padding: 2.8rem 3rem;
+  min-height: 520px;
+  padding: 2.8rem 3.2rem;
   position: relative;
   overflow: hidden;
   border-radius: 28px;
@@ -20,19 +19,19 @@
     radial-gradient(
       circle at 82% 42%,
       rgba(245, 158, 11, 0.22) 0%,
-      rgba(168, 85, 247, 0.15) 35%,
+      rgba(168, 85, 247, 0.18) 35%,
       transparent 72%
     ),
     radial-gradient(
       circle at 18% 78%,
-      rgba(59, 130, 246, 0.12) 0%,
+      rgba(59, 130, 246, 0.14) 0%,
       transparent 50%
     ),
-    #030514;
+    #05081c;
   border: 1.5px solid rgba(245, 158, 11, 0.45);
   box-shadow:
-    inset 0 0 70px rgba(15, 23, 42, 0.85),
-    0 20px 50px rgba(0, 0, 0, 0.65);
+    inset 0 0 80px rgba(15, 23, 42, 0.85),
+    0 25px 60px rgba(0, 0, 0, 0.7);
 }
 
 .bannerGridContainer::before,
@@ -43,9 +42,35 @@
   background-image:
     linear-gradient(to right, rgba(245, 158, 11, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(245, 158, 11, 0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-size: 38px 38px;
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 0.6;
+}
+
+/* Corner Stylized Foliage Silhouettes */
+.cornerFoliage {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.35;
+}
+
+.foliageBottomLeft {
+  bottom: -20px;
+  left: -20px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle at 0% 100%, #1e1b4b 0%, #030712 70%, transparent 100%);
+  filter: blur(12px);
+}
+
+.foliageBottomRight {
+  bottom: -20px;
+  right: -20px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle at 100% 100%, #1e1b4b 0%, #030712 70%, transparent 100%);
+  filter: blur(12px);
 }
 
 
@@ -60,10 +85,17 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.25rem;
+  gap: 1.2rem;
 }
 
-/* 3D Hero Heading Group */
+/* Brand Logo Header Wrapper */
+.brandLogoHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+/* Hero Heading (Daily Bonus Image) */
 .heroHeadingWrapper {
   position: relative;
   display: flex;
@@ -72,114 +104,24 @@
   width: 100%;
 }
 
-.goldOrbitRing {
-  position: absolute;
-  top: -10px;
-  left: -20px;
-  width: 320px;
-  height: 120px;
-  border-radius: 50%;
-  border: 4px solid #fbbf24;
-  box-shadow:
-    0 0 25px rgba(245, 158, 11, 0.6),
-    inset 0 0 15px rgba(245, 158, 11, 0.4);
-  transform: rotate(-12deg);
+.dailyBonusHeadingImg {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 8px 30px rgba(245, 158, 11, 0.5));
+  user-select: none;
   pointer-events: none;
-  z-index: 1;
-  opacity: 0.85;
-}
-
-.headingTopRow {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.calendar3dBadge {
-  position: relative;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #7c3aed, #4c1d95);
-  border: 2px solid #a78bfa;
-  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-}
-
-.starBadge {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #fbbf24;
-  color: #000000;
-  font-size: 0.65rem;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 8px #fbbf24;
-}
-
-.dailyText,
-.title {
-  font-family: var(--font-family-display, sans-serif);
-  font-size: clamp(2.8rem, 4.2vw, 3.8rem);
-  font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: 1px;
-  background: linear-gradient(180deg, #ffffff 0%, #a5b4fc 60%, #6366f1 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
-  margin: 0;
-}
-
-.crown3dBadge {
-  color: #fbbf24;
-  filter: drop-shadow(0 0 12px #fbbf24);
-  transform: rotate(15deg);
-}
-
-.bonusGoldTitle {
-  position: relative;
-  z-index: 2;
-  font-family: var(--font-family-display, sans-serif);
-  font-size: clamp(3.5rem, 5.5vw, 4.8rem);
-  font-weight: 950;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-  background: linear-gradient(
-    180deg,
-    #fff6b2 0%,
-    #ffd000 30%,
-    #ff9000 70%,
-    #d45d00 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  filter:
-    drop-shadow(0 6px 0 #853b00)
-    drop-shadow(0 12px 25px rgba(245, 158, 11, 0.6));
-  margin-top: -0.1rem;
 }
 
 
 /* Subtitle & Description */
 .heroDescriptionText,
 .description {
-  font-size: 1.05rem;
-  line-height: 1.5;
-  color: #e2e8f0;
+  font-size: 1.1rem;
+  line-height: 1.45;
+  color: #f1f5f9;
   margin: 0;
   font-weight: 600;
 }
@@ -187,7 +129,7 @@
 .goldText {
   color: #fbbf24;
   font-weight: 800;
-  text-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
 }
 
 
@@ -195,18 +137,18 @@
 .rewardItemsStrip,
 .rewardStrip {
   width: 100%;
-  max-width: 540px;
+  max-width: 530px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
   padding: 0.8rem 0.6rem;
-  background: rgba(9, 15, 48, 0.9);
-  border: 1px solid rgba(99, 102, 241, 0.35);
+  background: rgba(9, 14, 45, 0.78);
+  border: 1.5px solid rgba(99, 102, 241, 0.35);
   border-radius: 18px;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
   box-shadow:
-    inset 0 0 20px rgba(99, 102, 241, 0.1),
-    0 10px 30px rgba(0, 0, 0, 0.3);
+    inset 0 0 20px rgba(99, 102, 241, 0.12),
+    0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .rewardPillItem,
@@ -217,8 +159,8 @@
   justify-content: center;
   gap: 0.35rem;
   text-align: center;
-  padding: 0.4rem 0.2rem;
-  border-right: 1px solid rgba(99, 102, 241, 0.2);
+  padding: 0.35rem 0.2rem;
+  border-right: 1px solid rgba(99, 102, 241, 0.22);
 }
 
 .rewardPillItem:last-child,
@@ -226,61 +168,43 @@
   border-right: none;
 }
 
-.iconCircle3d,
-.rewardIcon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+.rewardIconWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 42px;
+}
+
+.perkSvgIcon {
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+  transition: transform 0.25s ease;
+}
+
+.rewardPillItem:hover .perkSvgIcon {
+  transform: scale(1.08) translateY(-2px);
+}
+
+/* Extra XP container */
+.xpIconContainer {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.coinIconGold,
-.coinIcon {
-  background: radial-gradient(circle at 35% 30%, #fff4a3, #ffc400 40%, #ef9700 75%, #bd6100);
-  border: 2px solid #fff1a8;
-  color: #fff4b0;
-  font-size: 0.75rem;
-  font-weight: 900;
-  box-shadow: 0 0 18px rgba(245, 158, 11, 0.45);
-}
-
-.gemIconPurple,
-.gemIcon {
-  background: radial-gradient(circle at 35% 30%, #c084fc, #9333ea 50%, #581c87);
-  border: 2px solid #e9d5ff;
-  color: #ffffff;
-  box-shadow: 0 0 18px rgba(168, 85, 247, 0.5);
-}
-
-.xpIconYellow,
-.xpIcon {
-  background: radial-gradient(circle at 35% 30%, #fef08a, #eab308 50%, #854d0e);
-  border: 2px solid #fef9c3;
-  color: #ffffff;
-  box-shadow: 0 0 18px rgba(234, 179, 8, 0.5);
-}
-
-.xpTextTag {
+.xpBoldTag {
   position: absolute;
-  right: -2px;
-  bottom: -2px;
-  font-size: 0.6rem;
-  font-weight: 900;
+  right: -8px;
+  bottom: 2px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 950;
   color: #ffffff;
-  background: #000000;
-  padding: 0.05rem 0.25rem;
+  background: #1e1b4b;
+  border: 1px solid #fbbf24;
+  padding: 0.05rem 0.3rem;
   border-radius: 4px;
-}
-
-.giftIconPurple,
-.giftIcon {
-  background: radial-gradient(circle at 35% 30%, #f472b6, #db2777 50%, #831843);
-  border: 2px solid #fbcfe8;
-  color: #ffffff;
-  box-shadow: 0 0 18px rgba(219, 39, 119, 0.5);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
 }
 
 .rewardItemLabels,
@@ -291,7 +215,7 @@
 }
 
 .rewardTitle {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 800;
   color: #ffffff;
 }
@@ -311,26 +235,24 @@
   margin-top: 0.4rem;
 }
 
-.btnSparkle {
+.btnRaySparkle {
   position: absolute;
-  color: #fbbf24;
-  font-size: 1.2rem;
   filter: drop-shadow(0 0 8px #fbbf24);
   animation: sparkleBlink 2s ease-in-out infinite alternate;
 }
 
 .sparkleLeft {
-  left: -20px;
+  left: -26px;
 }
 
 .sparkleRight {
-  right: -20px;
+  right: -26px;
   animation-delay: 1s;
 }
 
 @keyframes sparkleBlink {
-  0% { transform: scale(0.8); opacity: 0.4; }
-  100% { transform: scale(1.3); opacity: 1; }
+  0% { transform: scale(0.85); opacity: 0.5; }
+  100% { transform: scale(1.2); opacity: 1; }
 }
 
 .goldMainCtaBtn,
@@ -339,23 +261,23 @@
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  padding: 0.9rem 2.2rem;
+  padding: 0.95rem 2.2rem;
   border-radius: 999px;
   background: linear-gradient(
     180deg,
-    #ffd84d 0%,
-    #ffb000 55%,
-    #f38b00 100%
+    #ffe853 0%,
+    #ffb703 55%,
+    #f77f00 100%
   );
-  color: #182044;
+  color: #111827;
   font-family: var(--font-family-base, sans-serif);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 900;
-  border: 2px solid #ffe066;
+  border: 2px solid #fff59d;
   box-shadow:
-    0 0 25px rgba(245, 158, 11, 0.5),
-    0 10px 25px rgba(0, 0, 0, 0.35),
-    inset 0 2px 0 rgba(255, 255, 255, 0.6);
+    0 0 30px rgba(245, 158, 11, 0.55),
+    0 12px 25px rgba(0, 0, 0, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.7);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -364,9 +286,9 @@
 .claimButton:hover {
   transform: translateY(-3px) scale(1.02);
   box-shadow:
-    0 0 35px rgba(245, 158, 11, 0.7),
-    0 15px 30px rgba(0, 0, 0, 0.4),
-    inset 0 2px 0 rgba(255, 255, 255, 0.7);
+    0 0 40px rgba(245, 158, 11, 0.8),
+    0 16px 32px rgba(0, 0, 0, 0.45),
+    inset 0 2px 0 rgba(255, 255, 255, 0.8);
 }
 
 .ctaIconBadge {
@@ -375,7 +297,12 @@
   justify-content: center;
 }
 
+.ctaCalendarIcon {
+  color: #111827;
+}
+
 .ctaArrowIcon {
+  color: #111827;
   transition: transform 0.25s ease;
 }
 
@@ -390,9 +317,13 @@
   border-color: #6ee7b7 !important;
 }
 
+.claimedStateBtn .ctaArrowIcon {
+  color: #ffffff;
+}
+
 
 /* =========================================================
-   RIGHT VISUAL COLUMN & STAGE VIEWPORT
+   RIGHT VISUAL COLUMN & 3D TREASURE SHOWCASE STAGE
 ========================================================= */
 
 .rightStageCol,
@@ -408,45 +339,46 @@
 .bonusScene {
   position: relative;
   width: 100%;
-  max-width: 530px;
-  height: 450px;
+  max-width: 560px;
+  height: 480px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Ambient Glows */
+/* Ambient Radial Glows */
 .ambientGoldGlow,
 .sceneGlow {
   position: absolute;
   top: 15%;
   right: 15%;
-  width: 310px;
-  height: 310px;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.32) 0%, transparent 70%);
-  filter: blur(30px);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.35) 0%, transparent 70%);
+  filter: blur(40px);
   pointer-events: none;
 }
 
 .ambientPurpleGlow {
   position: absolute;
   bottom: 10%;
-  right: 5%;
-  width: 290px;
-  height: 290px;
+  left: 10%;
+  width: 330px;
+  height: 330px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.28) 0%, transparent 70%);
-  filter: blur(30px);
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%);
+  filter: blur(40px);
   pointer-events: none;
 }
+
 
 /* Handwritten Annotation: 7 Days Better Rewards ↪ */
 .annotation7DaysNote,
 .sevenDaysText {
   position: absolute;
-  top: 45px;
-  left: 15px;
+  top: 35px;
+  left: 10px;
   z-index: 25;
   display: flex;
   flex-direction: column;
@@ -463,149 +395,38 @@
 }
 
 .annotationText {
-  font-family: 'Georgia', 'Caveat', cursive, sans-serif;
-  font-size: 1.25rem;
+  font-family: 'Caveat', 'Segoe Script', cursive, sans-serif;
+  font-size: 1.35rem;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: 0.5px;
 }
 
 .annotationSub {
-  font-family: 'Georgia', 'Caveat', cursive, sans-serif;
-  font-size: 1.05rem;
+  font-family: 'Caveat', 'Segoe Script', cursive, sans-serif;
+  font-size: 1.15rem;
   font-weight: 700;
   color: rgba(248, 250, 252, 0.95);
-  line-height: 1.1;
+  line-height: 1.05;
 }
 
 .curvedArrowSvg {
   margin-top: 4px;
-  margin-left: 10px;
+  margin-left: 12px;
   filter: drop-shadow(0 0 6px #fbbf24);
 }
 
 
-/* 3D Daily Login Calendar Card */
-.calendarCard3d,
-.calendarBook {
-  position: absolute;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-40%) rotateY(-6deg) rotateX(4deg) rotateZ(2deg);
-  width: 320px;
-  background: linear-gradient(145deg, #101740, #080d2b);
-  border: 2.5px solid rgba(245, 158, 11, 0.65);
-  border-radius: 18px;
-  padding: 0.85rem;
-  box-shadow:
-    0 25px 50px rgba(0, 0, 0, 0.65),
-    0 0 35px rgba(245, 158, 11, 0.25);
-  z-index: 8;
-}
-
-.calendarSpiralHeader,
-.spiralRow {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 1rem;
-  margin-top: -1.3rem;
-  margin-bottom: 0.45rem;
-}
-
-.spiralRing {
-  width: 16px;
-  height: 22px;
-  border-radius: 6px;
-  background: linear-gradient(180deg, #fbbf24 0%, #d97706 100%);
-  border: 1.8px solid #fef08a;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.calendarTitleBar,
-.calendarHeader {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding-bottom: 0.55rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  margin-bottom: 0.65rem;
-}
-
-.checkHeaderIcon {
-  color: #fbbf24;
-}
-
-.calendarHeaderText {
-  font-size: 0.85rem;
-  font-weight: 850;
-  color: #fbbf24;
-  letter-spacing: 1.2px;
-}
-
-.daysGridContainer,
-.daysRow {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-}
-
-.dayBoxItem,
-.dayBox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  padding: 0.45rem 0.1rem;
-  border-radius: 9px;
-  background: rgba(30, 41, 59, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.dayBoxLabel {
-  font-size: 0.54rem;
-  font-weight: 800;
-  color: rgba(226, 232, 240, 0.75);
-}
-
-.dayCheckBadge {
-  color: #fbbf24;
-}
-
-.day7GiftBoxItem,
-.activeDay {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  padding: 0.45rem 0.1rem;
-  border-radius: 9px;
-  background: linear-gradient(135deg, #8b5cf6, #5b21b6);
-  border: 1.5px solid #d8b4fe;
-  box-shadow: 0 0 18px rgba(168, 85, 247, 0.75);
-}
-
-.day7Label {
-  font-size: 0.54rem;
-  font-weight: 900;
-  color: #ffffff;
-}
-
-.day7GiftIcon {
-  color: #fbbf24;
-}
-
-
-/* Treasure Chest — treasure2.png image, CENTERED ON PEDESTAL */
+/* 3D Showcase Image Wrapper — Centered on Pedestal */
 .treasureChest3dWrapper,
 .treasureChest {
   position: absolute;
-  bottom: 40px;
+  bottom: 35px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 20;
-  width: 310px;
+  z-index: 15;
+  width: 490px;
+  max-width: 100%;
   height: auto;
   display: flex;
   align-items: flex-end;
@@ -615,25 +436,39 @@
 
 @keyframes chestFloat {
   0%   { transform: translateX(-50%) translateY(0px); }
-  100% { transform: translateX(-50%) translateY(-12px); }
+  100% { transform: translateX(-50%) translateY(-10px); }
 }
 
-/* Soft gold aura behind the chest image */
+/* Glowing Aura behind image */
 .chestAuraGlow {
   position: absolute;
-  bottom: -20px;
+  top: 45%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 280px;
-  height: 110px;
+  transform: translate(-50%, -50%);
+  width: 440px;
+  height: 280px;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(245, 158, 11, 0.55) 0%, transparent 75%);
-  filter: blur(22px);
+  background: radial-gradient(ellipse, rgba(245, 158, 11, 0.6) 0%, rgba(217, 119, 6, 0.2) 50%, transparent 75%);
+  filter: blur(35px);
   pointer-events: none;
   z-index: 0;
 }
 
-/* The treasure2.png image */
+.chestCoreGlow {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.45) 0%, rgba(56, 189, 248, 0.2) 45%, transparent 70%);
+  filter: blur(35px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 3D Showcase Image (treasure3.png) */
 .treasureChestImg {
   position: relative;
   z-index: 1;
@@ -641,77 +476,57 @@
   height: auto;
   object-fit: contain;
   filter:
-    drop-shadow(0 0 30px rgba(245, 158, 11, 0.7))
-    drop-shadow(0 18px 40px rgba(0, 0, 0, 0.75));
+    drop-shadow(0 0 35px rgba(245, 158, 11, 0.75))
+    drop-shadow(0 0 65px rgba(56, 189, 248, 0.4))
+    drop-shadow(0 15px 35px rgba(0, 0, 0, 0.8));
   user-select: none;
   pointer-events: none;
 }
 
-/* VEs Coin SVG wrapper (used by floating coins in stage) */
-.veCoinSvgWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.5));
-}
 
-
-/* 3D Pedestal Platform Base — PERFECTLY CENTERED BENEATH CHEST */
+/* 3D Platform Pedestal Base with Double Glowing Neon Rings */
 .pedestalPlatform3d,
 .platform {
   position: absolute;
-  bottom: 15px;
+  bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 440px;
-  height: 80px;
+  width: 470px;
+  height: 75px;
   z-index: 5;
-}
-
-.pedestalTopGlowRing,
-.platformGlow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.55) 0%, transparent 80%);
-  border: 2.5px solid rgba(245, 158, 11, 0.75);
-  box-shadow: 0 0 35px rgba(245, 158, 11, 0.65);
 }
 
 .pedestalMetallicEdge {
   position: absolute;
   top: 14px;
-  left: 14px;
-  width: 412px;
-  height: 52px;
-  border-radius: 50%;
-  background: linear-gradient(180deg, #1e1b4b 0%, #090d26 100%);
-  border: 2px solid rgba(168, 85, 247, 0.55);
-}
-
-.pedestalNeonGoldRing {
-  position: absolute;
-  top: 4px;
   left: 15px;
-  width: 410px;
-  height: 28px;
+  width: 440px;
+  height: 48px;
   border-radius: 50%;
-  border-bottom: 4px solid #fbbf24;
-  box-shadow: 0 4px 20px #fbbf24;
+  background: linear-gradient(180deg, #181c4a 0%, #06091e 100%);
+  border: 1.5px solid rgba(168, 85, 247, 0.45);
 }
 
 .pedestalNeonBlueRing {
   position: absolute;
-  top: 12px;
-  left: 22px;
-  width: 396px;
+  top: 2px;
+  left: 12px;
+  width: 446px;
   height: 28px;
   border-radius: 50%;
-  border-bottom: 3px solid #00f0ff;
-  box-shadow: 0 4px 20px #00f0ff;
+  border-bottom: 3.5px solid #00f0ff;
+  box-shadow: 0 4px 22px #00f0ff;
+}
+
+.pedestalNeonGoldRing {
+  position: absolute;
+  top: 10px;
+  left: 18px;
+  width: 434px;
+  height: 28px;
+  border-radius: 50%;
+  border-bottom: 4px solid #fbbf24;
+  box-shadow: 0 4px 24px #fbbf24;
 }
 
 .pedestalBaseAura {
@@ -719,11 +534,11 @@
   bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 460px;
-  height: 40px;
+  width: 490px;
+  height: 45px;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(168, 85, 247, 0.65) 0%, transparent 75%);
-  filter: blur(18px);
+  background: radial-gradient(ellipse, rgba(168, 85, 247, 0.6) 0%, transparent 75%);
+  filter: blur(20px);
 }
 
 
@@ -735,10 +550,11 @@
   animation: floatAnim 4.5s ease-in-out infinite alternate;
 }
 
-.fCoinTopLeft, .coin1 { top: 35px; left: 15px; transform: rotate(-14deg); }
-.fCoinMidLeft, .coin2 { top: 220px; left: -10px; transform: rotate(12deg); animation-delay: 1.2s; }
+.fCoinTopRight { top: 20px; right: 80px; transform: rotate(14deg); }
+.fCoinMidLeft { top: 210px; left: -10px; transform: rotate(-12deg); animation-delay: 1.2s; }
+.fCoinBottomLeft { bottom: 50px; left: 20px; transform: rotate(8deg); animation-delay: 2.2s; }
 
-/* Floating 3D Purple Diamonds */
+/* Floating 3D Purple/Cyan Diamonds */
 .floatingPurpleGem,
 .floatingGem {
   position: absolute;
@@ -746,8 +562,29 @@
   animation: floatAnim 5s ease-in-out infinite alternate;
 }
 
-.fGemTopRight, .gem1 { top: 30px; right: 85px; animation-delay: 0.5s; }
-.fGemMidRight, .gem2 { top: 170px; right: 10px; animation-delay: 1.8s; }
+.fGemTopRight { top: 35px; right: 20px; animation-delay: 0.5s; }
+.fGemMidRight { top: 160px; right: -5px; animation-delay: 1.8s; }
+
+/* Twinkling Star Sparkles */
+.starSparkle {
+  position: absolute;
+  color: #fbbf24;
+  font-size: 1.1rem;
+  filter: drop-shadow(0 0 6px #fbbf24);
+  animation: sparkleBlink 2.5s ease-in-out infinite alternate;
+  z-index: 20;
+}
+
+.sparklePos1 { top: 80px; right: 140px; }
+.sparklePos2 { top: 180px; left: 15px; animation-delay: 1s; }
+.sparklePos3 { bottom: 90px; right: 90px; animation-delay: 1.8s; }
+
+.veCoinSvgWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.5));
+}
 
 @keyframes floatAnim {
   0% { transform: translateY(0) rotate(-6deg); }
@@ -757,177 +594,274 @@
 
 /* =========================================================
    RESPONSIVE BREAKPOINTS (TABLET & MOBILE)
-   NO OVERLAPPING OR MIXING ON MOBILE
+   ORDER:
+   1. Brand Logo & Daily Bonus Heading
+   2. 3D Glowing Treasure Showcase with Pedestal
+   3. 2-Line Description Text
+   4. 4 Reward Icons (1 Row Left to Right)
+   5. Claim Daily Bonus CTA Button
 ========================================================= */
 
 @media (max-width: 992px) {
   .bannerGridContainer,
   .bannerGrid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 2.2rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3rem;
+    padding: 2.2rem 1.4rem;
     min-height: auto;
   }
 
+  /* Flatten column wrappers into bannerGridContainer direct flex flow */
   .leftInfoCol,
-  .contentCol {
-    align-items: center;
-    text-align: center;
+  .contentCol,
+  .rightStageCol,
+  .visualCol {
+    display: contents;
   }
 
-  .heroHeadingWrapper {
-    align-items: center;
-  }
-
-  .goldOrbitRing {
-    left: 50%;
-    transform: translateX(-50%) rotate(-12deg);
-  }
-
-  .heroDescriptionText,
-  .description {
-    max-width: 100%;
-  }
-
-  .rewardItemsStrip,
-  .rewardStrip {
-    max-width: 100%;
-  }
-
-  .ctaWrapperArea,
-  .ctaGroup {
+  /* 1. Brand Logo & Daily Bonus Heading */
+  .brandLogoHeader {
+    order: 1;
     width: 100%;
     justify-content: center;
   }
 
-  .rightStageCol,
-  .visualCol {
-    order: -1;
+  .heroHeadingWrapper {
+    order: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  /* Switch stage to flex-column so calendar sits above chest — no more overlap */
+  .dailyBonusHeadingImg {
+    max-width: 350px;
+  }
+
+  /* 2. Visual Stage (Glowing 3D Showcase + Pedestal) */
   .stageViewportArea,
   .bonusScene {
+    order: 3;
     height: auto;
-    min-height: 420px;
+    min-height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    gap: 0;
-    padding: 0.5rem 0 1rem;
+    justify-content: center;
+    padding: 0.5rem 0;
     position: relative;
   }
 
-  /* Calendar: static flow item, centered, slightly tilted */
-  .calendarCard3d,
-  .calendarBook {
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    transform: scale(0.9);
-    transform-origin: top center;
-    width: 300px;
-    z-index: 5;
-    margin: 0 auto;
-  }
-
-  /* Chest: static flow item below calendar */
   .treasureChest3dWrapper,
   .treasureChest {
     position: relative;
     bottom: auto;
     left: auto;
     transform: none;
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto;
     animation: chestFloatSimple 4s ease-in-out infinite alternate;
-    z-index: 10;
-    width: 260px;
-    margin: -10px auto 0;
   }
 
-  /* Pedestal: hide on mobile — image already has its own pedestal */
+  /* Pedestal on mobile/tablet */
   .pedestalPlatform3d,
   .platform {
-    display: none;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: 340px;
+    height: 35px;
+    margin: -15px auto 0;
   }
 
-  /* Hide annotation + floating gems/coins that clutter mobile */
+  .pedestalMetallicEdge {
+    width: 320px;
+    height: 30px;
+    left: 10px;
+  }
+
+  .pedestalNeonBlueRing {
+    width: 325px;
+    left: 8px;
+  }
+
+  .pedestalNeonGoldRing {
+    width: 315px;
+    left: 12px;
+  }
+
+  .pedestalBaseAura {
+    width: 360px;
+  }
+
+  /* Annotation & Floating items simplified for mobile */
   .annotation7DaysNote,
   .sevenDaysText,
-  .fCoinTopLeft,
-  .fCoinMidLeft,
   .floatingGoldCoin,
   .floatingPurpleGem,
+  .starSparkle,
   .ambientGoldGlow,
   .ambientPurpleGlow {
     display: none;
+  }
+
+  /* 3. Description Text (2 Lines) */
+  .heroDescriptionText,
+  .description {
+    order: 4;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.45;
+    margin: 0.1rem 0 0;
+  }
+
+  /* 4. 4 Icons in 1 line left-to-right */
+  .rewardItemsStrip,
+  .rewardStrip {
+    order: 5;
+    width: 100%;
+    max-width: 480px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.4rem;
+    padding: 0.65rem 0.4rem;
+  }
+
+  /* 5. Claim Your Daily Bonus CTA Button */
+  .ctaWrapperArea,
+  .ctaGroup {
+    order: 6;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.2rem;
+  }
+
+  .goldMainCtaBtn,
+  .claimButton {
+    max-width: 320px;
+    width: 100%;
+    padding: 0.85rem 1.6rem;
   }
 }
 
 @keyframes chestFloatSimple {
   0%   { transform: translateY(0px); }
-  100% { transform: translateY(-10px); }
+  100% { transform: translateY(-8px); }
 }
 
 @media (max-width: 576px) {
   .bannerGridContainer,
   .bannerGrid {
     padding: 1.4rem 0.8rem;
+    gap: 1rem;
     border-radius: 20px;
   }
 
-  .dailyText,
-  .title {
-    font-size: clamp(1.8rem, 7.5vw, 2.4rem);
+  .veLogoText {
+    font-size: 1.35rem;
   }
 
-  .bonusGoldTitle {
-    font-size: clamp(2.6rem, 10vw, 3.2rem);
+  .loopBrandText {
+    font-size: 1.1rem;
+  }
+
+  .dailyBonusHeadingImg {
+    max-width: 290px;
+  }
+
+  .treasureChest3dWrapper,
+  .treasureChest {
+    max-width: 300px;
+    width: 100%;
+  }
+
+  .chestAuraGlow {
+    width: 280px;
+    height: 180px;
+  }
+
+  .chestCoreGlow {
+    width: 200px;
+    height: 200px;
+  }
+
+  .pedestalPlatform3d,
+  .platform {
+    width: 280px;
+    height: 25px;
+    margin: -10px auto 0;
+  }
+
+  .pedestalMetallicEdge {
+    width: 260px;
+    height: 22px;
+  }
+
+  .pedestalNeonBlueRing {
+    width: 265px;
+  }
+
+  .pedestalNeonGoldRing {
+    width: 255px;
   }
 
   .heroDescriptionText,
   .description {
     font-size: 0.88rem;
+    line-height: 1.4;
   }
 
+  /* 4 Reward Icons — Single row (1 line left to right) */
   .rewardItemsStrip,
   .rewardStrip {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.25rem;
+    padding: 0.5rem 0.25rem;
+    border-radius: 14px;
   }
 
   .rewardPillItem,
   .rewardItem {
+    border-right: 1px solid rgba(99, 102, 241, 0.2);
+    border-bottom: none;
+    padding: 0.25rem 0.1rem;
+    gap: 0.2rem;
+  }
+
+  .rewardPillItem:last-child,
+  .rewardItem:last-child {
     border-right: none;
-    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
-    padding-bottom: 0.6rem;
+  }
+
+  .rewardIconWrapper {
+    height: 36px;
+  }
+
+  .perkSvgIcon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .rewardTitle {
+    font-size: 0.68rem;
+  }
+
+  .rewardSub {
+    font-size: 0.58rem;
   }
 
   .goldMainCtaBtn,
   .claimButton {
-    width: 100%;
-  }
-
-  /* Stage stays as flex column from 992px rule — just shrink elements */
-  .stageViewportArea,
-  .bonusScene {
-    min-height: 360px;
-    padding: 0.25rem 0 0.5rem;
-  }
-
-  .calendarCard3d,
-  .calendarBook {
-    transform: scale(0.78);
-    transform-origin: top center;
-    width: 280px;
-  }
-
-  .treasureChest3dWrapper,
-  .treasureChest {
-    width: 210px;
-    margin-top: -20px;
+    font-size: 0.92rem;
+    padding: 0.8rem 1.4rem;
   }
 }
 
@@ -935,31 +869,68 @@
   .bannerGridContainer,
   .bannerGrid {
     padding: 1.2rem 0.5rem;
+    gap: 0.85rem;
   }
 
-  .dailyText,
-  .title {
-    font-size: 1.6rem;
-  }
-
-  .bonusGoldTitle {
-    font-size: 2.4rem;
-  }
-
-  .stageViewportArea,
-  .bonusScene {
-    min-height: 320px;
-  }
-
-  .calendarCard3d,
-  .calendarBook {
-    transform: scale(0.68);
-    width: 260px;
+  .dailyBonusHeadingImg {
+    max-width: 240px;
   }
 
   .treasureChest3dWrapper,
   .treasureChest {
-    width: 180px;
-    margin-top: -25px;
+    max-width: 250px;
+    width: 100%;
+  }
+
+  .pedestalPlatform3d,
+  .platform {
+    width: 230px;
+  }
+
+  .pedestalMetallicEdge {
+    width: 220px;
+  }
+
+  .pedestalNeonBlueRing {
+    width: 225px;
+  }
+
+  .pedestalNeonGoldRing {
+    width: 215px;
+  }
+
+  .heroDescriptionText,
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .rewardItemsStrip,
+  .rewardStrip {
+    gap: 0.15rem;
+    padding: 0.4rem 0.15rem;
+    border-radius: 12px;
+  }
+
+  .rewardIconWrapper {
+    height: 30px;
+  }
+
+  .perkSvgIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .rewardTitle {
+    font-size: 0.6rem;
+  }
+
+  .rewardSub {
+    font-size: 0.52rem;
+  }
+
+  .goldMainCtaBtn,
+  .claimButton {
+    font-size: 0.84rem;
+    padding: 0.75rem 1rem;
   }
 }
