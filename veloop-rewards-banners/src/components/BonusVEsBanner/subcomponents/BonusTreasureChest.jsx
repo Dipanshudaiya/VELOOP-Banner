@@ -3,6 +3,7 @@ import styles from '../BonusVEsBanner.module.css';
 
 /**
  * Custom 3D Faceted Diamond SVG Component
+ * (Still exported — used by BonusVisualStage for floating gems)
  */
 export const FacetedDiamondSvg = ({ size = 32, primaryColor = "#38bdf8", secondaryColor = "#818cf8", glowColor = "#38bdf8" }) => (
   <svg width={size} height={size} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: `drop-shadow(0 0 10px ${glowColor})` }}>
@@ -21,6 +22,7 @@ export const FacetedDiamondSvg = ({ size = 32, primaryColor = "#38bdf8", seconda
 
 /**
  * Custom 3D Gold VEs Coin SVG Component
+ * (Still exported — used by BonusVisualStage for floating coins)
  */
 export const VeCoin3dSvg = ({ size = 44, text = "VEs" }) => (
   <div className={styles.veCoinSvgWrapper} style={{ width: size, height: size }}>
@@ -38,7 +40,6 @@ export const VeCoin3dSvg = ({ size = 44, text = "VEs" }) => (
           <stop offset="100%" stopColor="#b45309" />
         </radialGradient>
       </defs>
-
       {/* Outer 3D Rim */}
       <circle cx="25" cy="25" r="23" fill="url(#goldRim)" stroke="#fef08a" strokeWidth="1.5" />
       {/* Inner Bevel */}
@@ -56,90 +57,22 @@ export const VeCoin3dSvg = ({ size = 44, text = "VEs" }) => (
 
 /**
  * BonusTreasureChest Component
- * Single Responsibility: Render the 3D open gold treasure chest overflowing with coins & crystal gems
+ * Single Responsibility: Render the treasure2.png image with glow + float animation,
+ * centered on the pedestal.
  */
 const BonusTreasureChest = () => {
   return (
     <div className={styles.treasureChest3dWrapper}>
-      {/* Golden Aura Glow behind chest */}
+      {/* Soft golden aura behind the image */}
       <div className={styles.chestAuraGlow} />
 
-      {/* Gold Ribbon / Strap wrapping around right of chest */}
-      <div className={styles.goldRibbonRight} />
-
-      {/* Open Lid */}
-      <div className={styles.chestLidOpen}>
-        <div className={styles.lidGoldTrim} />
-        <div className={styles.lidInnerDarkPanel}>
-          <VeCoin3dSvg size={36} text="VEs" />
-        </div>
-      </div>
-
-      {/* Main Chest Body with stylized 3D VE Emblem */}
-      <div className={styles.chestBodyMain}>
-        <div className={styles.chestFrontPanel}>
-          <div className={styles.veEmblemLogo}>
-            <span className={styles.veLetterV}>V</span>
-            <span className={styles.veLetterE}>E</span>
-          </div>
-        </div>
-
-        {/* Top Metallic Lock Latch */}
-        <div className={styles.chestLockBadge}>
-          <div className={styles.lockKeyhole} />
-        </div>
-      </div>
-
-      {/* Overflowing Gold VEs Coins & Crystal Diamonds */}
-      <div className={styles.overflowingTreasureContents}>
-        {/* Main Central Gold Coins */}
-        <div className={`${styles.chestVeCoin} ${styles.cCoinCenter}`}>
-          <VeCoin3dSvg size={54} text="VEs" />
-        </div>
-        <div className={`${styles.chestVeCoin} ${styles.cCoinTopLeft}`}>
-          <VeCoin3dSvg size={46} text="VEs" />
-        </div>
-        <div className={`${styles.chestVeCoin} ${styles.cCoinTopRight}`}>
-          <VeCoin3dSvg size={46} text="VEs" />
-        </div>
-        <div className={`${styles.chestVeCoin} ${styles.cCoinMidLeft}`}>
-          <VeCoin3dSvg size={42} text="VEs" />
-        </div>
-        <div className={`${styles.chestVeCoin} ${styles.cCoinMidRight}`}>
-          <VeCoin3dSvg size={42} text="VEs" />
-        </div>
-
-        {/* Floor Coins on Platform */}
-        <div className={`${styles.chestVeCoin} ${styles.floorCoinLeft}`}>
-          <VeCoin3dSvg size={44} text="VEs" />
-        </div>
-        <div className={`${styles.chestVeCoin} ${styles.floorCoinCenter}`}>
-          <VeCoin3dSvg size={44} text="VEs" />
-        </div>
-        <div className={`${styles.chestVeCoin} ${styles.floorCoinRight}`}>
-          <VeCoin3dSvg size={44} text="VEs" />
-        </div>
-
-        {/* 3D Faceted Crystal Diamonds / Gems */}
-        <div className={`${styles.chestGem} ${styles.cGemTopLeftBlue}`}>
-          <FacetedDiamondSvg size={38} primaryColor="#38bdf8" secondaryColor="#6366f1" glowColor="#38bdf8" />
-        </div>
-        <div className={`${styles.chestGem} ${styles.cGemTopRightPurple}`}>
-          <FacetedDiamondSvg size={36} primaryColor="#c084fc" secondaryColor="#a855f7" glowColor="#c084fc" />
-        </div>
-        <div className={`${styles.chestGem} ${styles.cGemMidLeftPurple}`}>
-          <FacetedDiamondSvg size={30} primaryColor="#a855f7" secondaryColor="#818cf8" glowColor="#a855f7" />
-        </div>
-        <div className={`${styles.chestGem} ${styles.cGemBottomCenterPurple}`}>
-          <FacetedDiamondSvg size={28} primaryColor="#c084fc" secondaryColor="#9333ea" glowColor="#c084fc" />
-        </div>
-        <div className={`${styles.chestGem} ${styles.cGemBottomRightCyan}`}>
-          <FacetedDiamondSvg size={42} primaryColor="#22d3ee" secondaryColor="#3b82f6" glowColor="#22d3ee" />
-        </div>
-        <div className={`${styles.chestGem} ${styles.cGemFarRightGiant}`}>
-          <FacetedDiamondSvg size={48} primaryColor="#38bdf8" secondaryColor="#818cf8" glowColor="#38bdf8" />
-        </div>
-      </div>
+      {/* The actual treasure image — PNG from /public */}
+      <img
+        src="/treasure3.png"
+        alt="VE Treasure Chest overflowing with VE coins and crystals"
+        className={styles.treasureChestImg}
+        draggable={false}
+      />
     </div>
   );
 };

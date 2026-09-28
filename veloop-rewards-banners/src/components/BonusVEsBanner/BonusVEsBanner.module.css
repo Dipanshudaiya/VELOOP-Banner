@@ -597,182 +597,63 @@
 }
 
 
-/* 3D Open Gold VE Treasure Chest — CENTERED ON PEDESTAL */
+/* Treasure Chest — treasure2.png image, CENTERED ON PEDESTAL */
 .treasureChest3dWrapper,
 .treasureChest {
   position: absolute;
-  bottom: 35px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
-  width: 260px;
-  height: 185px;
+  width: 310px;
+  height: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: chestFloat 4s ease-in-out infinite alternate;
 }
 
+@keyframes chestFloat {
+  0%   { transform: translateX(-50%) translateY(0px); }
+  100% { transform: translateX(-50%) translateY(-12px); }
+}
+
+/* Soft gold aura behind the chest image */
 .chestAuraGlow {
   position: absolute;
-  inset: -25px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.5) 0%, transparent 70%);
-  filter: blur(25px);
-  pointer-events: none;
-}
-
-.goldRibbonRight {
-  position: absolute;
-  right: -15px;
-  top: 25px;
-  width: 120px;
-  height: 100px;
-  border-radius: 50%;
-  border: 7px solid #fbbf24;
-  border-left: none;
-  box-shadow: 0 0 20px rgba(245, 158, 11, 0.45);
-  transform: rotate(15deg);
-  pointer-events: none;
-  z-index: 8;
-}
-
-.chestLidOpen,
-.chestLid {
-  position: absolute;
-  top: -28px;
-  left: 10px;
-  width: 240px;
-  height: 70px;
-  border-radius: 60px 60px 14px 14px;
-  background: linear-gradient(180deg, #fbbf24 0%, #d97706 60%, #92400e 100%);
-  border: 3.5px solid #fef08a;
-  transform: rotateX(-32deg);
-  box-shadow: 0 -10px 25px rgba(245, 158, 11, 0.55);
-}
-
-.lidInnerDarkPanel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  background: rgba(15, 23, 42, 0.65);
-  margin: 4px;
-  border-radius: 50px 50px 8px 8px;
-}
-
-.chestBodyMain,
-.chestBody {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 260px;
-  height: 130px;
-  border-radius: 18px 18px 28px 28px;
-  background: linear-gradient(180deg, #f59e0b 0%, #d97706 50%, #78350f 100%);
-  border: 4px solid #fef08a;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.chestFrontPanel,
-.chestFront {
-  width: 165px;
-  height: 80px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #1e1b4b, #0f172a);
-  border: 2.5px solid #fbbf24;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.75);
-}
-
-.veEmblemLogo {
-  font-family: var(--font-family-display, sans-serif);
-  font-size: 2.6rem;
-  font-weight: 950;
-  color: #fbbf24;
-  letter-spacing: -1px;
-  text-shadow: 0 0 20px rgba(245, 158, 11, 0.95);
-}
-
-.veLetterV {
-  color: #fbbf24;
-}
-
-.veLetterE {
-  color: #ffffff;
-}
-
-.chestLockBadge,
-.chestLock {
-  position: absolute;
-  top: -14px;
+  bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 28px;
-  height: 32px;
-  border-radius: 7px;
-  background: #fbbf24;
-  border: 2px solid #78350f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lockKeyhole {
-  width: 9px;
-  height: 11px;
-  border-radius: 4px;
-  background: #78350f;
-}
-
-/* Overflowing Treasure Contents inside Chest */
-.overflowingTreasureContents,
-.chestContents {
-  position: absolute;
-  inset: 0;
+  width: 280px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(245, 158, 11, 0.55) 0%, transparent 75%);
+  filter: blur(22px);
   pointer-events: none;
-  z-index: 15;
+  z-index: 0;
 }
 
+/* The treasure2.png image */
+.treasureChestImg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 30px rgba(245, 158, 11, 0.7))
+    drop-shadow(0 18px 40px rgba(0, 0, 0, 0.75));
+  user-select: none;
+  pointer-events: none;
+}
+
+/* VEs Coin SVG wrapper (used by floating coins in stage) */
 .veCoinSvgWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.5));
 }
-
-.chestVeCoin,
-.chestCoin {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cCoinCenter { top: -22px; left: 100px; transform: scale(1.15) rotate(4deg); z-index: 25; }
-.cCoinTopLeft { top: -25px; left: 50px; transform: rotate(-14deg); z-index: 20; }
-.cCoinTopRight { top: -24px; right: 60px; transform: rotate(12deg); z-index: 20; }
-.cCoinMidLeft { top: -5px; left: 20px; transform: rotate(-22deg); z-index: 18; }
-.cCoinMidRight { top: 0px; right: 30px; transform: rotate(18deg); z-index: 18; }
-
-/* Platform Floor Coins */
-.floorCoinLeft { bottom: -18px; left: -18px; transform: rotate(-15deg); z-index: 30; }
-.floorCoinCenter { bottom: -22px; left: 108px; transform: rotate(8deg); z-index: 30; }
-.floorCoinRight { bottom: -15px; right: -12px; transform: rotate(18deg); z-index: 30; }
-
-/* 3D Faceted Crystal Diamonds / Gems */
-.chestGem {
-  position: absolute;
-  z-index: 22;
-}
-
-.cGemTopLeftBlue { top: -45px; left: 40px; transform: rotate(-15deg); z-index: 28; }
-.cGemTopRightPurple { top: -42px; right: 70px; transform: rotate(20deg); z-index: 28; }
-.cGemMidLeftPurple { top: -12px; left: 10px; transform: rotate(-25deg); }
-.cGemBottomCenterPurple { bottom: -25px; left: 85px; transform: rotate(15deg); z-index: 35; }
-.cGemBottomRightCyan { bottom: -25px; right: 30px; transform: rotate(-12deg); z-index: 35; }
-.cGemFarRightGiant { bottom: -30px; right: -40px; transform: rotate(15deg); z-index: 35; }
 
 
 /* 3D Pedestal Platform Base — PERFECTLY CENTERED BENEATH CHEST */
@@ -924,54 +805,70 @@
     order: -1;
   }
 
+  /* Switch stage to flex-column so calendar sits above chest — no more overlap */
   .stageViewportArea,
   .bonusScene {
-    height: 360px;
+    height: auto;
+    min-height: 420px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 0.5rem 0 1rem;
+    position: relative;
   }
 
+  /* Calendar: static flow item, centered, slightly tilted */
   .calendarCard3d,
   .calendarBook {
-    top: 5px;
-    left: 50%;
+    position: relative;
+    top: auto;
+    left: auto;
     right: auto;
-    transform: translateX(-50%) scale(0.88);
-    width: 310px;
+    transform: scale(0.9);
+    transform-origin: top center;
+    width: 300px;
     z-index: 5;
+    margin: 0 auto;
   }
 
+  /* Chest: static flow item below calendar */
   .treasureChest3dWrapper,
   .treasureChest {
-    bottom: 10px;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%) scale(0.82);
-    z-index: 20;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    animation: chestFloatSimple 4s ease-in-out infinite alternate;
+    z-index: 10;
+    width: 260px;
+    margin: -10px auto 0;
   }
 
+  /* Pedestal: hide on mobile — image already has its own pedestal */
   .pedestalPlatform3d,
   .platform {
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%) scale(0.82);
-    z-index: 3;
+    display: none;
   }
 
+  /* Hide annotation + floating gems/coins that clutter mobile */
   .annotation7DaysNote,
-  .sevenDaysText {
-    top: 15px;
-    left: 10px;
-    transform: rotate(-6deg) scale(0.8);
-    z-index: 25;
-  }
-
-  .fCoinMidLeft {
+  .sevenDaysText,
+  .fCoinTopLeft,
+  .fCoinMidLeft,
+  .floatingGoldCoin,
+  .floatingPurpleGem,
+  .ambientGoldGlow,
+  .ambientPurpleGlow {
     display: none;
   }
+}
 
-  .cGemFarRightGiant {
-    display: none;
-  }
+@keyframes chestFloatSimple {
+  0%   { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
 }
 
 @media (max-width: 576px) {
@@ -992,7 +889,7 @@
 
   .heroDescriptionText,
   .description {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
   }
 
   .rewardItemsStrip,
@@ -1013,34 +910,24 @@
     width: 100%;
   }
 
+  /* Stage stays as flex column from 992px rule — just shrink elements */
   .stageViewportArea,
   .bonusScene {
-    height: 300px;
+    min-height: 360px;
+    padding: 0.25rem 0 0.5rem;
   }
 
   .calendarCard3d,
   .calendarBook {
-    top: 5px;
-    transform: translateX(-50%) scale(0.72);
+    transform: scale(0.78);
+    transform-origin: top center;
+    width: 280px;
   }
 
   .treasureChest3dWrapper,
   .treasureChest {
-    bottom: 5px;
-    transform: translateX(-50%) scale(0.68);
-  }
-
-  .pedestalPlatform3d,
-  .platform {
-    bottom: -5px;
-    transform: translateX(-50%) scale(0.68);
-  }
-
-  .annotation7DaysNote,
-  .sevenDaysText {
-    top: 5px;
-    left: 2px;
-    transform: scale(0.68);
+    width: 210px;
+    margin-top: -20px;
   }
 }
 
@@ -1061,21 +948,18 @@
 
   .stageViewportArea,
   .bonusScene {
-    height: 260px;
+    min-height: 320px;
   }
 
   .calendarCard3d,
   .calendarBook {
-    transform: translateX(-50%) scale(0.6);
+    transform: scale(0.68);
+    width: 260px;
   }
 
   .treasureChest3dWrapper,
   .treasureChest {
-    transform: translateX(-50%) scale(0.56);
-  }
-
-  .pedestalPlatform3d,
-  .platform {
-    transform: translateX(-50%) scale(0.56);
+    width: 180px;
+    margin-top: -25px;
   }
 }
